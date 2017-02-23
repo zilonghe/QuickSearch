@@ -41,5 +41,44 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <!--标题-->
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>正在上映</string>
+            <!--副标题-->
+<!--            <key>UIApplicationShortcutItemSubtitle</key>-->
+<!--            <string>open-favorites</string>-->
+            <!--使用系统图标类型-->
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeCaptureVideo</string>
+            <!--  选项自定义icon-->
+            <!-- <key>UIApplicationShortcutItemIconFile</key>
+             <string></string>--><!-- icon文件的路径，必须使用项目内的资源文件 -->
+            <!--  app应用标识-->
+            <key>UIApplicationShortcutItemType</key>
+            <string>com.quickSearch.onTheater</string>
+            <!--  可以用来传递一些数据-->
+            <key>UIApplicationShortcutItemUserInfo</key>
+            <dict>
+                <key>key2</key>
+                <string>value2</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>open-favorites</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>Favorites</string>
+            <key>UIApplicationShortcutItemType</key>
+            <string>com.mycompany.myapp.openfavorites</string>
+            <key>UIApplicationShortcutItemUserInfo</key>
+            <dict>
+                <key>key1</key>
+                <string>value1</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>

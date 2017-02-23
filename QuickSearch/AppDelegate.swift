@@ -13,7 +13,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print(shortcutItem.type)
+        if shortcutItem.type == "com.quickSearch.onTheater" {
+            print("here")
+            
+            
+//            let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+//            let rootVC = appDelegate.window!.rootViewController
+            
+//            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+//            let params = [
+//                Constants.DoubanParameterKeys.Query: "Leon"
+//            ]
+//            tableViewVC.getDataFromDouban(params as [String : AnyObject])
+            
+//            rootVC?.present(tableViewVC, animated: true, completion: nil)
+            runVC()
+            completionHandler(true)
+            
+        }
+        
+    }
+    
+    func runVC() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let tableViewVC = sb.instantiateViewController(withIdentifier: "ResultTableView") as! ViewController
+        window!.rootViewController?.present(tableViewVC,
+                                            animated: true, completion: nil)
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
