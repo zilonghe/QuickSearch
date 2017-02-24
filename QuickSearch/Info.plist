@@ -66,19 +66,6 @@
                 <string>value2</string>
             </dict>
         </dict>
-        <dict>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>open-favorites</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Favorites</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>com.mycompany.myapp.openfavorites</string>
-            <key>UIApplicationShortcutItemUserInfo</key>
-            <dict>
-                <key>key1</key>
-                <string>value1</string>
-            </dict>
-        </dict>
     </array>
 </dict>
 </plist>

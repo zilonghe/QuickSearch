@@ -133,7 +133,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-12" y="49.025487256371818"/>
+            <point key="canvasLocation" x="42" y="46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="66C-QZ-NPc">

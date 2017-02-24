@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     // MARK: Variables
     
     var keyboardOnScreen = false
+    var getDaily = false
     
     // MARK: Properties
     
@@ -37,25 +38,22 @@ class ViewController: UIViewController {
         resultTableView.separatorStyle = .none
         resultTableView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
         
-        // Create SearchBar
-        createSearchBar()
         
         // check if 3d touch avaiable
         if (traitCollection.forceTouchCapability == .available ){
             registerForPreviewing(with: self, sourceView: self.resultTableView)
         }
         
-        // clear those empty cell seperate line
-//        resultTableView.tableFooterView = UIView(frame: .zero)
-        
-        // notification
-//        subscribeToNotification(.UIKeyboardWillShow, selector: #selector(keyboardWillShow))
-//        subscribeToNotification(.UIKeyboardWillHide, selector: #selector(keyboardWillHide))
+        // if this VC is activated by shortcut item "正在上映" dont create search bar.
+        if getDaily {
+            getDailyMovie()
+        } else {
+            createSearchBar()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        unsubscribeToNotifications()
     }
     
     // MARK: Configure UI
@@ -78,37 +76,20 @@ class ViewController: UIViewController {
             searchBar.alpha = 0.5
         }
     }
-    
-    // MARK: Action
-    
-    // Dismiss Keyboard when tap on the screen.
-//    @IBAction func userDidTapView(_ sender: AnyObject) {
-//        resignIfFirstResponder(searchTextfield)
-//    }
-    
-    // Search textField.
-//    @IBAction func search(_ sender: AnyObject) {
-//        userDidTapView(self)
-//        setUIEnabled(false)
-//        
-//        if !(searchTextfield.text!.isEmpty) {
-//            if !(Result.isEmpty) {
-//                Result.removeAll()
-//                resultTableView.reloadData()
-//            }
-//            
-//            let searchContent = searchTextfield.text
-//            let params = [
-//                Constants.DoubanParameterKeys.Query: searchContent
-//            ]
-//            getDataFromDouban(params as [String : AnyObject])
-//        } else {
-//            setUIEnabled(true)
-//        }
-//    }
-    
 
     // MARK: Network Method
+    
+    func getDailyMovie() {
+        if !(Result.isEmpty) {
+            Result.removeAll()
+            resultTableView.reloadData()
+        }
+        
+        let params = [
+            Constants.DoubanParameterKeys.Location: "广州"
+        ]
+        getDataFromDouban(params as [String : AnyObject])
+    }
     
     func getDataFromDouban(_ params: [String:AnyObject]) {
         
@@ -193,7 +174,7 @@ class ViewController: UIViewController {
         var components = URLComponents()
         components.scheme = Constants.Douban.APIScheme
         components.host = Constants.Douban.APIHost
-        components.path = Constants.Douban.APIPath
+        components.path = getDaily ? Constants.Douban.NowAPIPath : Constants.Douban.APIPath
         components.queryItems = [URLQueryItem]()
         
         for (key, value) in params {

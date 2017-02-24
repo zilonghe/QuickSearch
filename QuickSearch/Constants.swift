@@ -21,6 +21,7 @@ struct Constants {
     // MARK: Douban Parameter Keys
     struct DoubanParameterKeys {
         static let Query = "q"
+        static let Location = "city"
     }
     
     // MARK: Douban Parameter Values

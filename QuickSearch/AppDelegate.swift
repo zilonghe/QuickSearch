@@ -14,27 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        print(shortcutItem.type)
         if shortcutItem.type == "com.quickSearch.onTheater" {
-            print("here")
-            
-            
-//            let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-//            let rootVC = appDelegate.window!.rootViewController
-            
-//            let root = UIApplication.shared.keyWindow?.rootViewController
-            
-//            let params = [
-//                Constants.DoubanParameterKeys.Query: "Leon"
-//            ]
-//            tableViewVC.getDataFromDouban(params as [String : AnyObject])
-            
-//            rootVC?.present(tableViewVC, animated: true, completion: nil)
-            runVC()
+            getDailyVC()
             completionHandler(true)
-            
         }
-        
     }
     
     func runVC() {
@@ -42,6 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tableViewVC = sb.instantiateViewController(withIdentifier: "ResultTableView") as! ViewController
         window!.rootViewController?.present(tableViewVC,
                                             animated: true, completion: nil)
+    }
+    
+    func getDailyVC() {
+        let rootViewController = self.window!.rootViewController as! UINavigationController
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tableViewVC = mainStoryboard.instantiateViewController(withIdentifier: "ResultTableView") as! ViewController
+        tableViewVC.getDaily = true
+        rootViewController.pushViewController(tableViewVC, animated: true)
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
