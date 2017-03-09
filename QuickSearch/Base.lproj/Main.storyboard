@@ -117,7 +117,9 @@
                             <constraint firstItem="wgQ-Zd-Cdk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sPL-rC-w9i"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8xu-vC-moT"/>
+                    <navigationItem key="navigationItem" id="8xu-vC-moT">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="BLe-Y1-6xR"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultTableView" destination="wgQ-Zd-Cdk" id="htp-Hz-uAl"/>
                         <outlet property="searchDisplayController" destination="Obm-ly-pSh" id="XOY-ZM-j8w"/>

@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         
         // if this VC is activated by shortcut item "正在上映" dont create search bar.
         if getDaily {
+            self.navigationItem.title = "正在上映"
             getDailyMovie()
         } else {
             createSearchBar()
@@ -61,7 +62,7 @@ class ViewController: UIViewController {
     func createSearchBar() {
         
         searchBar.showsCancelButton = false
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = "搜索你感兴趣的电影、影人"
         searchBar.delegate = self
         
         self.navigationItem.titleView = searchBar
