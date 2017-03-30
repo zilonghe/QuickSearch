@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fuG-h6-3Zz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fuG-h6-3Zz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGu-xa-lCf" id="BWT-vS-sQj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-o1-AYz" userLabel="background card view">
@@ -49,55 +49,45 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="KAK-3l-Tkf"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhk-NM-qFR" userLabel="rating label">
-                                                    <rect key="frame" x="79" y="43" width="284" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <rect key="frame" x="79" y="59" width="284" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ResultTableView" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxh-cq-Wwx" userLabel="casts label">
-                                                    <rect key="frame" x="79" y="82.5" width="284" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJo-zK-3cw" userLabel="date label">
-                                                    <rect key="frame" x="79" y="64.5" width="284" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ResultTableView" text="casts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxh-cq-Wwx" userLabel="casts label">
+                                                    <rect key="frame" x="79" y="80" width="284" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gJo-zK-3cw" firstAttribute="top" secondItem="jhk-NM-qFR" secondAttribute="bottom" constant="2" id="7Ii-A6-r34"/>
+                                                <constraint firstItem="Lxh-cq-Wwx" firstAttribute="top" secondItem="jhk-NM-qFR" secondAttribute="bottom" constant="4" id="7FA-nl-gky"/>
                                                 <constraint firstItem="ucL-o1-AYz" firstAttribute="leading" secondItem="BWT-vS-sQj" secondAttribute="leadingMargin" constant="4" id="9R4-A4-bSj"/>
                                                 <constraint firstItem="ucL-o1-AYz" firstAttribute="height" secondItem="3jk-9r-OAl" secondAttribute="height" id="9td-se-4hQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gJo-zK-3cw" secondAttribute="trailing" constant="4" id="KMw-Q1-BLH"/>
                                                 <constraint firstItem="PkE-0Y-l4v" firstAttribute="leading" secondItem="3jk-9r-OAl" secondAttribute="trailing" constant="8" id="Mgv-eT-HJr"/>
                                                 <constraint firstItem="jhk-NM-qFR" firstAttribute="leading" secondItem="3jk-9r-OAl" secondAttribute="trailing" constant="8" id="RYf-Ne-k0m"/>
-                                                <constraint firstItem="gJo-zK-3cw" firstAttribute="leading" secondItem="3jk-9r-OAl" secondAttribute="trailing" constant="8" id="S0K-eE-PXt"/>
                                                 <constraint firstItem="Lxh-cq-Wwx" firstAttribute="leading" secondItem="3jk-9r-OAl" secondAttribute="trailing" constant="8" id="Xe7-Ky-Ctz"/>
                                                 <constraint firstItem="3jk-9r-OAl" firstAttribute="top" secondItem="BWT-vS-sQj" secondAttribute="topMargin" id="ZAu-qP-yvQ"/>
                                                 <constraint firstItem="3jk-9r-OAl" firstAttribute="leading" secondItem="BWT-vS-sQj" secondAttribute="leadingMargin" id="ZMJ-uR-3R2"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Lxh-cq-Wwx" secondAttribute="trailing" constant="4" id="ccV-Pe-h8W"/>
-                                                <constraint firstItem="jhk-NM-qFR" firstAttribute="top" secondItem="PkE-0Y-l4v" secondAttribute="bottom" constant="14" id="f83-x1-MTY"/>
+                                                <constraint firstItem="jhk-NM-qFR" firstAttribute="top" secondItem="PkE-0Y-l4v" secondAttribute="bottom" constant="30" id="f83-x1-MTY"/>
                                                 <constraint firstItem="ucL-o1-AYz" firstAttribute="top" secondItem="BWT-vS-sQj" secondAttribute="topMargin" id="gQa-SW-vgK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PkE-0Y-l4v" secondAttribute="trailing" constant="4" id="lAS-nI-Cfb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jhk-NM-qFR" secondAttribute="trailing" constant="4" id="n63-lT-rNK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ucL-o1-AYz" secondAttribute="trailing" id="nbp-ov-6dP"/>
                                                 <constraint firstItem="PkE-0Y-l4v" firstAttribute="top" secondItem="BWT-vS-sQj" secondAttribute="topMargin" constant="8" id="rhf-Fv-7wi"/>
-                                                <constraint firstItem="Lxh-cq-Wwx" firstAttribute="top" secondItem="gJo-zK-3cw" secondAttribute="bottom" constant="2" id="tBW-5s-6SN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="PostImageView" destination="3jk-9r-OAl" id="Zs5-JN-wj0"/>
                                             <outlet property="backgroundCardView" destination="ucL-o1-AYz" id="6fO-i4-6BW"/>
                                             <outlet property="castsLabel" destination="Lxh-cq-Wwx" id="909-j2-nRu"/>
-                                            <outlet property="dateLabel" destination="gJo-zK-3cw" id="oYe-OC-zdX"/>
                                             <outlet property="ratingLabel" destination="jhk-NM-qFR" id="544-vz-2hO"/>
                                             <outlet property="titleLabel" destination="PkE-0Y-l4v" id="Ikq-70-hFx"/>
                                         </connections>

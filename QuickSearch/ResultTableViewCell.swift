@@ -22,7 +22,6 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var castsLabel: UILabel!
 
     // MARK: Actions
@@ -30,7 +29,6 @@ class ResultTableViewCell: UITableViewCell {
     func updateUI() {
         titleLabel.text = item.movieName
         ratingLabel.text = item.detail
-        dateLabel.text = item.date
         castsLabel.text = item.casts
         
         PostImageView.imageFromServerURL(urlString: item.imageUrl)
