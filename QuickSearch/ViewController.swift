@@ -108,7 +108,7 @@ class ViewController: UIViewController {
             }
             
             guard (error == nil) else {
-                displayError("There was an error with your request: \(error)")
+                displayError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
