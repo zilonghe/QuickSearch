@@ -122,43 +122,40 @@ class ViewController: UIViewController {
                 return
             }
             
-            let parsedResult: [String:AnyObject]!
-            do {
-                parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
-            } catch {
-                displayError("Could not parse the data as JSON: '\(data)'")
-                return
-            }
-            
-            guard let subjectArray = parsedResult["subjects"] as? [[String:AnyObject]] else {
-                displayError("Cannot find key 'subjects'")
-                return
-            }
-
-            for item in subjectArray {
+            let json = JSON(data: data)
+            for (_, subJson):(String, JSON) in json["subjects"] {
                 
-                guard let castArray = item["casts"] as? [[String:AnyObject]] else {
-                    displayError("Cannot find key 'casts'")
+                var castsWithFormat = "主演："
+                var ratingWithFormat = "评分："
+                var date = ""
+                var titleWithFormat = ""
+                
+                let castArray = subJson["casts"]
+                for (_, subCastJson):(String, JSON) in castArray {
+                    if let castName = subCastJson["name"].string {
+                        castsWithFormat += "\(castName) "
+                    }
+                }
+                
+                let title: String = subJson["title"].stringValue
+                let url: String = subJson["alt"].stringValue
+                let posterUrl: String = subJson["images"]["small"].stringValue
+                let rating: Float = subJson["rating"]["average"].floatValue
+                ratingWithFormat += String(rating)
+                
+                if let dateString = subJson["year"].string {
+                    date = dateString
+                    if !dateString.isEmpty {
+                        titleWithFormat = "\(title)(\(dateString))"
+                    } else {
+                        titleWithFormat = title
+                    }
+                } else {
+                    displayError("Could not find key 'year'.")
                     return
                 }
                 
-                guard let imageJson = item["images"] as? [String:AnyObject] else {
-                    displayError("Cannot find key 'images'")
-                    return
-                }
-
-                var castString = ""
-                for cast in castArray {
-                    castString += "\(cast["name"] as! String) "
-                }
-                
-                let detail = "\(item["rating"]?["average"] as! Float)"
-                let date = "年份：\(item["year"] as! String)"
-                let casts = "主演：\(castString)"
-                
-                let imageUrl = imageJson["small"] as! String
-                
-                self.Result.append(result(item["title"] as! String, detail, date, casts, item["alt"] as! String, imageUrl))
+                self.Result.append(result(titleWithFormat, ratingWithFormat, date, castsWithFormat, url, posterUrl))
             }
 
             performUIUpdatesOnMain {

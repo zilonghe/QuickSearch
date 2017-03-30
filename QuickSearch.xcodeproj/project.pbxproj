@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3823A1451E8CEE8A0001143C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3823A1441E8CEE8A0001143C /* SwiftyJSON.swift */; };
 		3861BD931E46159300C43304 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861BD921E46159300C43304 /* ResultTableViewCell.swift */; };
 		3861BD951E4718DC00C43304 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861BD941E4718DC00C43304 /* Result.swift */; };
 		38D2DAE31E2F47A900BE10BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2DAE21E2F47A900BE10BA /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3823A1441E8CEE8A0001143C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../../../../GitHub/SwiftyJSON/Source/SwiftyJSON.swift; sourceTree = "<group>"; };
 		3861BD921E46159300C43304 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		3861BD941E4718DC00C43304 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		38D2DADF1E2F47A900BE10BA /* QuickSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 		38D2DAE11E2F47A900BE10BA /* QuickSearch */ = {
 			isa = PBXGroup;
 			children = (
+				3823A1441E8CEE8A0001143C /* SwiftyJSON.swift */,
 				38D2DAE21E2F47A900BE10BA /* AppDelegate.swift */,
 				3861BD941E4718DC00C43304 /* Result.swift */,
 				38D2DAE41E2F47A900BE10BA /* ViewController.swift */,
@@ -170,6 +173,7 @@
 				38D2DAE51E2F47A900BE10BA /* ViewController.swift in Sources */,
 				38D2DAE31E2F47A900BE10BA /* AppDelegate.swift in Sources */,
 				3861BD931E46159300C43304 /* ResultTableViewCell.swift in Sources */,
+				3823A1451E8CEE8A0001143C /* SwiftyJSON.swift in Sources */,
 				38D2DAF51E2F4E1700BE10BA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
